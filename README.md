@@ -1,2 +1,2 @@
 # DemoApp
- APP REST
+ APP REST que permite indicar su nombre y da como respuesta un JSON que saluda 'Hola <name>'
