@@ -32,6 +32,9 @@ jobs:
             - v1-dependencies-
 
       - run: gradle dependencies
+      - run:
+          name: Analyze on SonarCloud
+          command: gradle build sonarqube"
 
       - save_cache:
           paths:
@@ -40,3 +43,9 @@ jobs:
 
       # run tests!
       - run: gradle test
+      
+workflows:
+  main:
+    jobs:
+      - build:
+          context: SonarCloud
