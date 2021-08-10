@@ -12,7 +12,7 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
 @SpringBootTest
 @AutoConfigureMockMvc
-public class DemoApplicationIntegrationTests {
+class DemoApplicationIntegrationTests {
  
     private static final String URL = "/greeting";
 
@@ -20,27 +20,27 @@ public class DemoApplicationIntegrationTests {
 	private MockMvc mvc;
     
     @Test
-    public void shouldReturnHttpCode200OnGet() throws Exception {
+    void shouldReturnHttpCode200OnGet() throws Exception {
         mvc.perform(MockMvcRequestBuilders.get(URL+"?name=Michell")).andExpect(status().isOk());
     }
 
     @Test
-    public void shouldReturnHttpCode200OnPost() throws Exception {
+    void shouldReturnHttpCode200OnPost() throws Exception {
         mvc.perform(MockMvcRequestBuilders.post(URL).param("name", "Michell")).andExpect(status().isOk());
     }
 
     @Test
-    public void shouldReturnHttpCode405OnPUT() throws Exception {
+    void shouldReturnHttpCode405OnPUT() throws Exception {
         mvc.perform(MockMvcRequestBuilders.put(URL)).andExpect(status().isMethodNotAllowed());
     }
 
     @Test
-    public void shouldReturnHttpCode400OnGetWithoutParameter() throws Exception {
+    void shouldReturnHttpCode400OnGetWithoutParameter() throws Exception {
         mvc.perform(MockMvcRequestBuilders.get(URL)).andExpect(status().isBadRequest());
     }
     
     @Test
-    public void shouldReturnHttpCode400OnPostWithoutParameter() throws Exception {
+    void shouldReturnHttpCode400OnPostWithoutParameter() throws Exception {
         mvc.perform(MockMvcRequestBuilders.post(URL)).andExpect(status().isBadRequest());
   }
 }

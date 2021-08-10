@@ -1,5 +1,8 @@
 package com.example.demo;
 
+import static org.assertj.core.api.Assertions.byLessThan;
+import static org.hamcrest.Matchers.greaterThan;
+import static org.junit.Assert.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
@@ -11,21 +14,16 @@ class DemoApplicationTests {
 	private final GreetingController greetingController = new GreetingController();
 	
 	@Test
-    public void shouldReturnInputString() {
+    void shouldReturnInputString() {
     	final Greeting greetingResponse = greetingController.greeting(NAME);
     	assertEquals(greetingResponse.getContent(),("Hello, "+NAME));
     }
 
 	@Test
-    public void idShouldGreaterThanZero() {
+    void idShouldGreaterThanZero() {
 		final Greeting greetingResponse = greetingController.greeting(NAME);
-        if(greetingResponse.getId() > 1 == true);
+        assertThat((int)(greetingResponse.getId()), greaterThan(0));
     }
-
-
-	@Test
-	void contextLoads() {
-	}
 
 
 }

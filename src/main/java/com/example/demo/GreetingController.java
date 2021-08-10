@@ -13,13 +13,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/greeting")
 public class GreetingController {
 
-	private static final String template = "Hello, %s";
+	private static final String TEMPLATE = "Hello, %s";
 	private static final AtomicLong counter = new AtomicLong();
 
 	
 	@RequestMapping(method = {RequestMethod.GET,RequestMethod.POST})
 	@ResponseStatus(value = HttpStatus.OK)
 	public Greeting greeting(@RequestParam(value = "name") String name) {
-		return new Greeting(counter.incrementAndGet(), String.format(template, name));
+		return new Greeting(counter.incrementAndGet(), String.format(TEMPLATE, name));
 	}
 }
