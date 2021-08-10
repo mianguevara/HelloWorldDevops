@@ -32,7 +32,7 @@ jobs:
             - v1-dependencies-
 
       - run: gradle dependencies
-          name: Analyze on SonarCloud
+          - name: Analyze on SonarCloud
           command: gradle build sonarqube"
           
       workflows:
