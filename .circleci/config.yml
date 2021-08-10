@@ -27,7 +27,7 @@ jobs:
       - 
         run: "gradle test"
     working_directory: ~/repo
-version: 2
+version: 2.1
 workflows: 
   main: 
     jobs: 
