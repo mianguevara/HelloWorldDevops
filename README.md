@@ -30,15 +30,15 @@ Ya hemos probado el bloque funcional de nuestro servicio; ahora nos toca probar 
  ## Producción
  <ol>
  <li><p><b>Analizador estático de código: </b>
- Se usa para este proceso a sonarcloud.io y el proceso se encuentra en:
+ Se usa para este proceso a sonarcloud.io y se encuentra visibile en la siguiente url:
  https://sonarcloud.io/dashboard?id=mianguevara_DemoApp </p></li>
  
  <li><p><b>Pipeline CI/CD: </b>
- Se usa para este proceso a circleci y el proceso se encuentra en:
+ Se usa para este proceso a circleci y se encuentra en visible en la siguiente url:
  https://app.circleci.com/pipelines/github/mianguevara/DemoApp </p></li>
  
   <li><p><b>Despligue:</b>
- Para el proceso de despliegue se el cloud de amazon y se instancia un EC2 y se utiliza un S3 para el almacenamieto del .JAR, se puede visualizar en la igueinte direccion una  vez la maquina se ecuentre en ejecución:
+ Para el proceso de despliegue se el cloud de amazon y se instancia un EC2 y se utiliza un S3 para el almacenamiento del .JAR, se puede visualizar en la siguiente dirección una vez la máquina se encuentre en ejecución:
    http://ec2-54-237-8-223.compute-1.amazonaws.com:8080/greeting?name=Michell </p></li>
 </ol>
 
