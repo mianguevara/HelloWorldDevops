@@ -30,7 +30,7 @@ jobs:
           name: Analyze on SonarCloud
           command: ./gradlew build sonarqube
           
-      - run: gradle test --info --stacktrace
+      - run: ./gradlew test --info --stacktrace
 
 workflows:
   main:
