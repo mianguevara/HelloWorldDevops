@@ -10,21 +10,21 @@ jobs:
     steps:
       - checkout
       
+      - run:
+          name: chmod permissions
+          command: chmod +x ./gradlew
+      
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "build.gradle" }}
             - v1-dependencies-
 
-      - run: gradle dependencies
+      - run: ./gradlew dependencies
 
       - save_cache:
           paths:
             - ~/.gradle
           key: v1-dependencies-{{ checksum "build.gradle" }}
-          
-      - run:
-          name: chmod permissions
-          command: chmod +x ./gradlew
           
       - run:
           name: Analyze on SonarCloud
