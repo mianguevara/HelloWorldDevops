@@ -17,16 +17,15 @@ jobs:
       - 
         run: "gradle dependencies"
       - 
-        run: 
-          command: "gradle build sonarqube\""
-          name: "Analyze on SonarCloud"
         save_cache: 
           key: "v1-dependencies-{{ checksum \"build.gradle\" }}"
           paths: 
             - ~/.gradle
+      - ~
       - 
-        run: "gradle test"
-    working_directory: ~/repo
+        run: 
+          command: "gradle build sonarqube\""
+          name: "Analyze on SonarCloud"
 version: 2.1
 workflows: 
   main: 
@@ -34,3 +33,5 @@ workflows:
       - 
         build: 
           context: SonarCloud
+        run: "gradle test"
+    working_directory: ~/repo
