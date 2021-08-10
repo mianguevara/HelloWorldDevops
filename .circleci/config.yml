@@ -23,9 +23,8 @@ jobs:
             - ~/.gradle
       - ~
       - 
-        run: 
-          command: "gradle build sonarqube\""
-          name: "Analyze on SonarCloud"
+        run: "gradle test"
+    working_directory: ~/repo
 version: 2.1
 workflows: 
   main: 
@@ -33,5 +32,3 @@ workflows:
       - 
         build: 
           context: SonarCloud
-        run: "gradle test"
-    working_directory: ~/repo
