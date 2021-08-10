@@ -14,6 +14,8 @@ jobs:
       - run:
           name: Analyze on SonarCloud
           command: ./gradlew build sonarqube
+          
+      - run: gradle test
 
 workflows:
   main:
